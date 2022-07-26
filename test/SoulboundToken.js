@@ -3,7 +3,7 @@ const { ethers, upgrades } = require("hardhat");
 const Web3 = require("web3");
 const web3 = new Web3(ethers.provider);
 
-describe("Membership", function () {
+describe("SoulboundToken", function () {
 
   let soulboundToken;
   let owner;
