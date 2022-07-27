@@ -17,6 +17,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 // Go to https://hardhat.org/config/ to learn more
 const WALLET_PRIVATE_KEY = process.env.MY_WALLET_PRIVATE_KEY;
 const ALCHEMY_API_KEY_RINKEBY = process.env.ALCHEMY_API_KEY_RINKEBY;
+const ALCHEMY_API_KEY_GOERLI = process.env.ALCHEMY_API_KEY_GOERLI;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 
 /**
@@ -37,6 +38,10 @@ module.exports = {
       url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_API_KEY_RINKEBY}`,
       accounts: [`${WALLET_PRIVATE_KEY}`]
     },
+    goerli: {
+      url: `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_API_KEY_GOERLI}`,
+      accounts: [`${WALLET_PRIVATE_KEY}`]
+    }
   },
   etherscan: {
     apiKey: `${ETHERSCAN_API_KEY}`
