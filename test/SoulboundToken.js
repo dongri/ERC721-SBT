@@ -120,11 +120,14 @@ describe("SoulboundToken", function () {
 
     expect(await contractWithAdd2.mint(message, signature)).to.be.ok;
 
+    await expect(contractWithAdd2.mint(message, signature)).to.be.revertedWith("only one token per address");
+
     // transfer
     await expect(contractWithAdd2.transferFrom(addr2.address, addr3.address, 1)).to.be.revertedWith("token is SOUL BOUND");
 
     // setApprovalForAll
     await expect(contractWithAdd2.setApprovalForAll(addr3.address, true)).to.be.revertedWith("token is SOUL BOUND");
+    expect(await contractWithAdd2.setApprovalForAll(addr3.address, false)).to.be.ok;
 
     // approve
     await expect(contractWithAdd2.approve(addr3.address, 1)).to.be.revertedWith("token is SOUL BOUND");

@@ -68,7 +68,7 @@ contract SoulboundToken is ERC721EnumerableUpgradeable, OwnableUpgradeable {
 
   function _setApprovalForAll(address owner,address operator,bool approved) internal virtual override {
     console.log("_setApprovalForAll", owner, operator, approved);
-    require(false, "token is SOUL BOUND");
+    require(approved == false, "token is SOUL BOUND");
   }
 
   function _approve(address to, uint256 tokenId) internal virtual override {

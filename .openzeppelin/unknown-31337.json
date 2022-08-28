@@ -52,9 +52,9 @@
     }
   ],
   "impls": {
-    "9ee42ae1e89e0ed002c3a84a0d76393823558d8f8b2e344d1137b821f971f52b": {
+    "06cafa220507323bac9e18434efbf6c5bd861183c2b985e71ae48a4efdba901d": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0xe79a820d6cd1f9eaf64bd16b3b5f27d983cd0574e8ae857115d3d23e3716a1b8",
+      "txHash": "0x325bf93d5a44b73676b94cfcc7f2e25fe7f9b2b23276189a9e1fa73a37936d1a",
       "layout": {
         "storage": [
           {
