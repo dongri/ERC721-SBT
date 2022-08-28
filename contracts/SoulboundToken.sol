@@ -43,6 +43,8 @@ contract SoulboundToken is ERC721EnumerableUpgradeable, OwnableUpgradeable {
   function mint(string memory __message, bytes memory __signature) external {
     bytes32 _messageHash = keccak256(abi.encodePacked(__message, msg.sender));
     require(_verify(_messageHash, __signature, signer), "invalid signature");
+    uint256 balance = balanceOf(msg.sender);
+    require(balance < 1, "only one token per address");
     tokenIdCounter.increment();
     uint256 _tokenId = tokenIdCounter.current();
     _safeMint(msg.sender, _tokenId);
